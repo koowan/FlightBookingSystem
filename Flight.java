@@ -22,7 +22,7 @@ public class Flight{
     setProfit(profit);
   }
 
-  public String getflightNumber(){
+  public String getFlightNumber(){
     return this.flightNumber;
   }
 
