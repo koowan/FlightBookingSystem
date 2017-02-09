@@ -42,6 +42,10 @@ public class Passenger{
     public void setPassportNum(String passportNum){
       this.passportNum = passportNum;
     }
+    
+    public void viewPassenger(){
+        System.out.println("\nName: " + name + "\nType: " + type + "\nAddress: " + address + "\nPassport #: " + passportNum);
+    }
 
 
 }
