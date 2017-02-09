@@ -6,6 +6,16 @@ public class Seat{
  
  public Seat(){
   setSeatStatus(0);
+  setSeatNumber(null);
+  setSeatX(0);
+  setSeatY(0);
+ }
+ 
+ public Seat(int seatStatus, String seatNumber, int seatX, int seatY){
+  setSeatStatus(seatStatus);
+  setSeatNumber(seatNumber);
+  setSeatX(seatX);
+  setSeatY(seatY);
  }
   
  public getSeatStatus(){
