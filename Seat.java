@@ -24,11 +24,21 @@ public class Seat{
   this.seatNumber = seatNumber;
  }
 
+ public getSeatX(){
+  return this.seatX;
+ }
 
+ public setSeatX(){
+  this.seatX = seatX;
+ }
 
-
-
-
+ public getSeatY(){
+  return this.seatY;
+ }
+ 
+ public setSeatY(seatY){
+  this.seatY = seatY;
+ }
 
 
 }
