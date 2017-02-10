@@ -18,39 +18,39 @@ public class Seat{
   setSeatY(seatY);
  }
   
- public getSeatStatus(){
+ public int getSeatStatus(){
   return this.seatStatus;
  }
  
- public setSeatStatus(int seatStatus){
+ public void setSeatStatus(int seatStatus){
   this.seatStatus = seatStatus;
  }
  
- public getSeatNumber(){
+ public String getSeatNumber(){
   return this.seatNumber;
  }
  
- public setSeatNumber(seatNumber){
+ public void setSeatNumber(seatNumber){
   this.seatNumber = seatNumber;
  }
 
- public getSeatX(){
+ public int getSeatX(){
   return this.seatX;
  }
  
- public setSeatX(seatX){
+ public void setSeatX(seatX){
   this.seatX = seatX;
  }
 
- public getSeatY(){
+ public int getSeatY(){
   return this.seatY;
  }
  
- public setSeatY(seatY){
+ public void setSeatY(seatY){
   this.seatY = seatY;
  }
 
- public convertSeatNum(){
+ public void convertSeatNum(){
   seatNum = this.seatNumber;
   
   setSeatX(Integer.parseInt(seatNum.charAt(0)));
