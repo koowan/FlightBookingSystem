@@ -53,18 +53,18 @@ public class Seat{
  public void convertSeatNum(){
   seatNumber = this.seatNumber;
 
-  setSeatX(Integer.parseInt(seatNumber.charAt(0)));
+  setSeatX(Integer.parseInt(seatNum.charAt(0)));
 
-  if(seatNumber.charAt(1).equals("D")){
-  setSeatY(0);
-  }
-  else if(seatNumber.charAt(1).equals("C")){
-  setSeatY(1);
-  }
-  else if(seatNumber.charAt(1).equals("B")){
-  setSeatY(2);
-  }
-  else if(seatNumber.charAt(1).equals("A")){
-  setSeatY(3);
-  }
+    if(seatNum.charAt(1).equals('D')){
+    setSeatY(0);
+    }
+    else if(seatNum.charAt(1).equals('C')){
+    setSeatY(1);
+    }
+    else if(seatNum.charAt(1).equals('B')){
+    setSeatY(2);
+    }
+    else if(seatNum.charAt(1).equals('A')){
+    setSeatY(3);
+    }
  }
