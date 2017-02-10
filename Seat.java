@@ -3,67 +3,69 @@ public class Seat{
  private String seatNumber;
  private int seatX;
  private int seatY;
- 
+
  public Seat(){
   setSeatStatus(0);
   setSeatNumber(null);
   setSeatX(0);
   setSeatY(0);
  }
- 
- public Seat(int seatStatus, String seatNumber, int seatX, int seatY){
+
+ public Seat(int seatStatus, String seatNumber){
   setSeatStatus(seatStatus);
   setSeatNumber(seatNumber);
   setSeatX(seatX);
   setSeatY(seatY);
  }
-  
+
  public int getSeatStatus(){
   return this.seatStatus;
  }
- 
+
  public void setSeatStatus(int seatStatus){
   this.seatStatus = seatStatus;
  }
- 
+
  public String getSeatNumber(){
   return this.seatNumber;
  }
- 
- public void setSeatNumber(seatNumber){
+
+ public void setSeatNumber(String seatNumber){
   this.seatNumber = seatNumber;
  }
 
  public int getSeatX(){
   return this.seatX;
  }
- 
- public void setSeatX(seatX){
+
+ public void setSeatX(int seatX){
   this.seatX = seatX;
  }
 
  public int getSeatY(){
   return this.seatY;
  }
- 
- public void setSeatY(seatY){
+
+ public void setSeatY(int seatY){
   this.seatY = seatY;
  }
 
  public void convertSeatNum(){
-  seatNum = this.seatNumber;
-  
+  seatNumber = this.seatNumber;
+
   setSeatX(Integer.parseInt(seatNum.charAt(0)));
-  
-  if(seatNum.charAt(1) == "D")
-   setSeatY(0);
-  elseif(seatNum.charAt(1) == "C")
-   setSeatY(1);
-  elseif(seatNum.charAt(1) == "B")
-   setSeatY(2);
-  elseif(seatNum.charAt(1) == "A")
-   setSeatY(3);
- 
- 
+
+    if(seatNum.charAt(1) == "D"){
+    setSeatY(0);
+    }
+    else if(seatNum.charAt(1) == "C"){
+    setSeatY(1);
+    }
+    else if(seatNum.charAt(1) == "B"){
+    setSeatY(2);
+    }
+    else if(seatNum.charAt(1) == "A"){
+    setSeatY(3);
+    }
+  }
  }
- 
