@@ -38,7 +38,7 @@ public class Seat{
   return this.seatX;
  }
 
- public setSeatX(){
+ public setSeatX(seatX){
   this.seatX = seatX;
  }
 
@@ -50,5 +50,9 @@ public class Seat{
   this.seatY = seatY;
  }
 
+ public convertSeatNum(){
+  seatNum = this.seatNumber;
+  
+  setSeatX(Integer.parseInt(seatNum.charAt(0)));
 
 }
