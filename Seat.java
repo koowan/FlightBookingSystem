@@ -1,3 +1,4 @@
+
 public class Seat{
  private int seatStatus; // 0 = available, 1 = reserved, 2 = booked
  private String seatNumber;
@@ -7,15 +8,15 @@ public class Seat{
  public Seat(){
   setSeatStatus(0);
   setSeatNumber(null);
-  setSeatX(0);
-  setSeatY(0);
+  //setSeatX(0);
+  //setSeatY(0);
  }
 
- public Seat(int seatStatus, String seatNumber, int seatX, int seatY){
+ public Seat(int seatStatus, String seatNumber){
   setSeatStatus(seatStatus);
   setSeatNumber(seatNumber);
-  setSeatX(seatX);
-  setSeatY(seatY);
+  //setSeatX(seatX);
+  //setSeatY(seatY);
  }
 
  public int getSeatStatus(){
@@ -53,18 +54,19 @@ public class Seat{
  public void convertSeatNum(){
   seatNumber = this.seatNumber;
 
-  setSeatX(Integer.parseInt(seatNum.charAt(0)));
+  setSeatX(Integer.parseInt(seatNumber.charAt(0)));
 
-    if(seatNum.charAt(1).equals('D')){
-    setSeatY(0);
-    }
-    else if(seatNum.charAt(1).equals('C')){
-    setSeatY(1);
-    }
-    else if(seatNum.charAt(1).equals('B')){
-    setSeatY(2);
-    }
-    else if(seatNum.charAt(1).equals('A')){
-    setSeatY(3);
-    }
+      if(seatNumber.charAt(1) == 'D'){
+      setSeatY(0);
+      }
+      else if(seatNumber.charAt(1) == 'C'){
+      setSeatY(1);
+      }
+      else if(seatNumber.charAt(1) == 'B'){
+      setSeatY(2);
+      }
+      else if(seatNumber.charAt(1) == 'A'){
+      setSeatY(3);
+      }
+ }
  }
