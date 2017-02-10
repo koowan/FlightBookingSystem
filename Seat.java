@@ -37,8 +37,8 @@ public class Seat{
  public getSeatX(){
   return this.seatX;
  }
-
- public setSeatX(){
+ 
+ public setSeatX(seatX){
   this.seatX = seatX;
  }
 
@@ -50,5 +50,20 @@ public class Seat{
   this.seatY = seatY;
  }
 
-
-}
+ public convertSeatNum(){
+  seatNum = this.seatNumber;
+  
+  setSeatX(Integer.parseInt(seatNum.charAt(0)));
+  
+  if(seatNum.charAt(1) == "D")
+   setSeatY(0);
+  elseif(seatNum.charAt(1) == "C")
+   setSeatY(1);
+  elseif(seatNum.charAt(1) == "B")
+   setSeatY(2);
+  elseif(seatNum.charAt(1) == "A")
+   setSeatY(3);
+ 
+ 
+ }
+ 
