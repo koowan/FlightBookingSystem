@@ -11,7 +11,7 @@ public class Seat{
   setSeatY(0);
  }
 
- public Seat(int seatStatus, String seatNumber){
+ public Seat(int seatStatus, String seatNumber, int seatX, int seatY){
   setSeatStatus(seatStatus);
   setSeatNumber(seatNumber);
   setSeatX(seatX);
