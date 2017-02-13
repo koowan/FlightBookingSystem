@@ -26,6 +26,35 @@ public class Flight{
     return this.flightNumber;
   }
 
+import java.util.*;
+
+public class Flight{
+  private String flightNumber;
+  private String departName;
+  private String arrivalName;
+  private int flightStatus;
+  SeatStatus seatStatus;
+  Passenger passenger = new Passenger();
+
+  public Flight(){
+    setFlightNumber(null);
+    setDepartName(null);
+    setArrivalName(null);
+    setFlightStatus(0);
+  }
+
+  public Flight(String flightNumber, String departName, String arrivalName, int flightStatus){
+    setFlightNumber(flightNumber);
+    setDepartName(departName);
+    setArrivalName(arrivalName);
+    setFlightStatus(flightStatus);
+  }
+
+
+  public String getFlightNumber(){
+    return this.flightNumber;
+  }
+
   public void setFlightNumber(String number){
     this.flightNumber = number;
   }
@@ -50,17 +79,23 @@ public class Flight{
     return this.flightStatus;
   }
 
-  public void setFlightStatus(String flightStatus){
+  public void setFlightStatus(int flightStatus){
     this.flightStatus = flightStatus;
   }
 
-  public double getProfit(){
-    return this.profit;
+  public void flightStatusDisplay(){
+    if (getFlightStatus() == 0){
+      System.out.println("Available for booking");
+    }
+    else if (getFlightStatus() == 1){
+      System.out.println("Checking in");
+    }
+    else if (getFlightStatus() == 2){
+      System.out.println("Closed");
+    }
   }
 
-  public void setProfit(double profit){
-    this.profit = profit;
-  }
+  public void generateSeats(){
 
   }
-}
+  }
