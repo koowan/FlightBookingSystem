@@ -9,3 +9,26 @@ owo
 1B 2B 3B 4B 5B 6B 7B 8B
 
 1A 2A 3A 4A 5A 6A 7A 8A
+
+
+Calculate profit.
+
+Reservations and bookins cannot be made until flight details have been finalised.
+
+A seat is considered booked when payment has been made.
+
+When booking is confirmed, the passenger name is checked against the original reservation.
+
+A flight has 3 states : Available, checking in and closed.
+
+When flight is checking in, it can be cancelled or booked but no reservations can be made.
+
+Staff can cancel flights.
+
+Staff can view seating plan and details of seats.
+
+No refund policy but seats can be resold.
+
+Passenger discount: 10% local
+                    25% business
+                    5% economy (on in promotion)
