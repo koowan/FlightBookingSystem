@@ -4,7 +4,6 @@ public class MainMenu{
 
     Scanner input = new Scanner(System.in);
     Passenger passenger = new Passenger();
-    PassengerList passengerlist = new PassengerList();
 
     Flight one = new Flight ("1234", "Glasgow", "Western Isle", 0);
     Flight two = new Flight("4321", "Western Isle", "Glasgow", 2);
