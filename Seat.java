@@ -1,38 +1,16 @@
-
+import java.util.*;
 public class Seat{
- private int seatStatus; // 0 = available, 1 = reserved, 2 = booked
  private String seatNumber;
  private int seatX;
- private int seatY;
+ private char seatY;
+ SeatStatus seatStatus;
+ Passenger passenger = new Passenger();
 
- public Seat(){
-  setSeatStatus(0);
-  setSeatNumber(null);
-  //setSeatX(0);
-  //setSeatY(0);
- }
-
- public Seat(int seatStatus, String seatNumber){
-  setSeatStatus(seatStatus);
-  setSeatNumber(seatNumber);
-  //setSeatX(seatX);
-  //setSeatY(seatY);
- }
-
- public int getSeatStatus(){
-  return this.seatStatus;
- }
-
- public void setSeatStatus(int seatStatus){
-  this.seatStatus = seatStatus;
- }
-
- public String getSeatNumber(){
-  return this.seatNumber;
- }
-
- public void setSeatNumber(String seatNumber){
-  this.seatNumber = seatNumber;
+ public Seat(int seatX, char seatY, SeatStatus seatStatus, Passenger passenger){
+   this.seatX = seatX;
+   this.seatY = seatY;
+   this.seatStatus = seatStatus;
+   this.passenger = null;
  }
 
  public int getSeatX(){
@@ -43,18 +21,27 @@ public class Seat{
   this.seatX = seatX;
  }
 
- public int getSeatY(){
+ public char getSeatY(){
   return this.seatY;
  }
 
- public void setSeatY(int seatY){
+ public void setSeatY(char seatY){
   this.seatY = seatY;
  }
 
- public void convertSeatNum(){
+ public String getSeatNumber(){
+  return this.seatNumber;
+ }
+
+public void makeReservation(){
+
+
+}
+
+public void convertSeatNum(){
   seatNumber = this.seatNumber;
 
-  setSeatX(Integer.parseInt(seatNumber.charAt(0)));
+  setSeatX(Character.getNumericValue(seatNumber.charAt(0)));
 
       if(seatNumber.charAt(1) == 'D'){
       setSeatY(0);
@@ -68,5 +55,7 @@ public class Seat{
       else if(seatNumber.charAt(1) == 'A'){
       setSeatY(3);
       }
- }
+   }
+
+
  }
