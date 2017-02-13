@@ -28,6 +28,9 @@ public class MainMenu{
       System.out.println("---------------------------");
       System.out.println("");
     }
+    else {
+      System.out.println("thats not a number!!!!!!");
+    }
 
 
     }
