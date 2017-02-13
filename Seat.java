@@ -2,11 +2,11 @@ import java.util.*;
 public class Seat{
  private String seatNumber;
  private int seatX;
- private char seatY;
+ private int seatY;
  SeatStatus seatStatus;
  Passenger passenger = new Passenger();
 
- public Seat(int seatX, char seatY, SeatStatus seatStatus, Passenger passenger){
+ public Seat(int seatX, int seatY, SeatStatus seatStatus, Passenger passenger){
    this.seatX = seatX;
    this.seatY = seatY;
    this.seatStatus = seatStatus;
@@ -21,16 +21,20 @@ public class Seat{
   this.seatX = seatX;
  }
 
- public char getSeatY(){
+ public int getSeatY(){
   return this.seatY;
  }
 
- public void setSeatY(char seatY){
+ public void setSeatY(int seatY){
   this.seatY = seatY;
  }
 
  public String getSeatNumber(){
   return this.seatNumber;
+ }
+
+ public void setSeatNumber(String seatNumber){
+   this.seatNumber = seatNumber;
  }
 
 public void makeReservation(){
