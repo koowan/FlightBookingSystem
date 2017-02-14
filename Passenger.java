@@ -25,7 +25,7 @@ public class Passenger{
     }
 
     public String getType(){
-      return this.name;
+      return this.type
     }
 
     public void setType(String type) throws InputValidationException {
