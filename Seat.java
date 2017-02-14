@@ -1,8 +1,8 @@
 import java.util.*;
 public class Seat{
  private String seatNumber;
- private int seatX;
- private int seatY;
+ private int seatX; //row
+ private int seatY; //column
  SeatStatus seatStatus;
  Passenger passenger = new Passenger();
 
