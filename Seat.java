@@ -1,8 +1,9 @@
 import java.util.*;
 public class Seat{
  private String seatNumber;
- private int seatX; //row
- private int seatY; //column
+ private float seatPrice;
+ int seatX; //row
+ int seatY; //column
  SeatStatus seatStatus;
  Passenger passenger = new Passenger();
 
@@ -37,10 +38,18 @@ public class Seat{
    this.seatNumber = seatNumber;
  }
 
-public void makeReservation(){
+ public float getSeatPrice(){
+  return this.seatPrice;
+ }
+ 
+ public void setSeatPrice(float seatPrice){
+  this.seatPrice = seatPrice;
+ }
+ 
+ public void makeReservation(){
 
 
-}
+ }
 
 public void convertSeatNum(){
   seatNumber = this.seatNumber;
