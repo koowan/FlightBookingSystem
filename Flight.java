@@ -1,5 +1,4 @@
 public class Flight{
-  // my name is rachel i am big weeb!
   private String flightNumber;
   private String departName;
   private String arrivalName;
