@@ -19,7 +19,7 @@ A seat is considered booked when payment has been made.
 
 When booking is confirmed, the passenger name is checked against the original reservation.
 
-A flight has 3 states : Available, checking in and closed.
+A flight has 3 states : Available, checking in, boarding and closed.
 
 When flight is checking in, it can be cancelled or booked but no reservations can be made.
 
