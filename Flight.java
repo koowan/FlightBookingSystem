@@ -7,10 +7,10 @@ public class Flight{
 	FlightStatus flightStatus;
 	Seat[][] seating = new Seat[4][8];
 
-	public static void main(String[] args) throws InputValidationException {
+	/*public static void main(String[] args) throws InputValidationException {
 		Flight test = new Flight();
 	}
-
+	*/
 	public Flight(){
 		setFlightNumber(null);
 		setDepartName(null);
