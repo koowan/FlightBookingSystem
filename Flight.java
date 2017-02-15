@@ -67,6 +67,8 @@ public class Flight{
 			System.out.println("Available for booking");
 		} else if (getFlightStatus() == FlightStatus.CHECKING_IN){
 			System.out.println("Checking in");
+		} else if (getFlightStatus() == FlightStatus.BOARDING){
+			System.out.println("Boarding");
 		} else if (getFlightStatus() == FlightStatus.CLOSED){
 			System.out.println("Closed");
 		}
