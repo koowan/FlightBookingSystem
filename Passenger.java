@@ -4,14 +4,14 @@ public class Passenger{
     private String address;
     private String passportNum;
     
-    public Passenger(){
+    public Passenger() throws InputValidationException{
       setName(null);
       setType(null);
       setAddress(null);
       setPassportNum(null);
     }
 
-    public Passenger(String name, String type, String address, String passportNum){
+    public Passenger(String name, String type, String address, String passportNum) throws InputValidationException{
       setName(name);
       setType(type);
       setAddress(address);
@@ -32,7 +32,7 @@ public class Passenger{
     }
 
     public String getType(){
-      return this.type
+      return this.type;
     }
 
     public void setType(String type) throws InputValidationException {
