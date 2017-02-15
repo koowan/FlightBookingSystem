@@ -13,7 +13,7 @@ owo
 
 Calculate profit.
 
-Reservations and bookins cannot be made until flight details have been finalised.
+Reservations and bookings cannot be made until flight details have been finalised.
 
 A seat is considered booked when payment has been made.
 
@@ -31,4 +31,4 @@ No refund policy but seats can be resold.
 
 Passenger discount: 10% local
                     25% business
-                    5% economy (on in promotion)
+                    5% economy (only in promotion)
