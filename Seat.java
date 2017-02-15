@@ -8,19 +8,6 @@ public class Seat{
 	SeatStatus seatStatus;
 	Passenger passenger = new Passenger();
 	
-	
-	public static void main(String[] args) {
-		Seat[][] test = new Seat[4][8];
-		
-		for (int i = 0; i < 4; i ++) {
-			for (int j = 0; j < 8; j ++) {
-				test[i][j] = new Seat(i,j);
-			}
-		}
-		
-	}
-
-	
 	public Seat(){
 		this.seatNumber = "1A";
 		convertSeatNumToCoords();
