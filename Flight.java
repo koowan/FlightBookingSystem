@@ -20,7 +20,7 @@ public class Flight{
 	}
 	
 	
-	public Flight(String flightNumber, String departName, String arrivalName, FlightStatus flightstatus){
+	public Flight(String flightNumber, String departName, String arrivalName, FlightStatus flightStatus){
 		setFlightNumber(flightNumber);
 		setDepartName(departName);
 		setArrivalName(arrivalName);
