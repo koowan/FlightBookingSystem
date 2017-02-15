@@ -4,7 +4,7 @@ public class Passenger{
 	private String address;
 	private String passportNum;
 	    
-	public Passenger() throws InputValidationException{
+	public Passenger(){
 		setName(null);
 		setType(null);
 		setAddress(null);
