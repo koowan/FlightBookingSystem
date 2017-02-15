@@ -6,7 +6,7 @@ public class Seat{
 	int seatX; //row
 	int seatY; //column
 	SeatStatus seatStatus;
-	Passenger passenger = new Passenger();
+	Passenger passenger;
 	
 	public Seat(){
 		this.seatNumber = "1A";
