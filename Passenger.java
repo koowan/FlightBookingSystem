@@ -1,21 +1,25 @@
 public class Passenger{
 	private String name;
-	private String type;
+	private PassengerType type;
 	private String address;
 	private String passportNum;
+	private String businessName;
 	    
-	public Passenger(){
+	public Passenger() throws InputValidationException{
 		setName(null);
-		setType(null);
+		setType(PassengerType.STANDARD);
 		setAddress(null);
 		setPassportNum(null);
+		setBusinessName(null);
 	}
 
-	public Passenger(String name, String type, String address, String passportNum) throws InputValidationException{
+
+	public Passenger(String name, PassengerType type, String address, String passportNum, String businessName) throws InputValidationException{
 		setName(name);
 		setType(type);
 		setAddress(address);
 		setPassportNum(passportNum);
+		setBusinessName(businessName);
 	}
 
 	
@@ -31,16 +35,12 @@ public class Passenger{
 		}
 	}
 
-	public String getType(){
+	public PassengerType getType(){
 		return this.type;
 	}
 
-	public void setType(String type) throws InputValidationException {
-		if (type.matches("\\p{Alpha}){5,8}")){
-			this.type = type;
-		} else {
-			throw new InputValidationException();
-		}
+	public void setType(PassengerType type){
+		this.type = type;
 	}
 
 	public String getAddress(){
@@ -66,10 +66,23 @@ public class Passenger{
 			throw new InputValidationException();
 		}
 	}
+	
+	public String getBusinessName(){
+		return this.businessName;
+	}
+	
+	private void setBusinessName(String businessName) {
+		this.businessName = businessName;
+		
+	}
 
 	
 	public void viewPassenger(){
-		System.out.println("\nName: " + name + "\nType: " + type + "\nAddress: " + address + "\nPassport #: " + passportNum);
+		if (this.type == PassengerType.BUSINESS)
+			System.out.println("\nName: " + this.name + "\nType: " + this.type + "\nBusiness: " + this.businessName + "\nAddress: " + this.address + "\nPassport #: " + this.passportNum);
+		else
+			System.out.println("\nName: " + this.name + "\nType: " + this.type + "\nAddress: " + this.address + "\nPassport #: " + this.passportNum);
+		
 	}
 
 
