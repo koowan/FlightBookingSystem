@@ -4,8 +4,11 @@ public class Passenger{
     private String address;
     private String passportNum;
 
-  public Passenger(){
-
+  public Passenger(String name, String type, String address, String passportNum){
+    setName(name);
+    setType(type);
+    setAddress(address);
+    setPassportNum(passportNum);
     }
 
     public String getName(){
