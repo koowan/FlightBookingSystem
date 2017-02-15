@@ -8,6 +8,19 @@ public class Seat{
 	SeatStatus seatStatus;
 	Passenger passenger = new Passenger();
 	
+	
+	public static void main(String[] args) {
+		Seat[][] test = new Seat[4][8];
+		
+		for (int i = 0; i < 4; i ++) {
+			for (int j = 0; j < 8; j ++) {
+				test[i][j] = new Seat(i,j);
+			}
+		}
+		
+	}
+
+	
 	public Seat(){
 		this.seatNumber = "1A";
 		convertSeatNumToCoords();
@@ -15,12 +28,14 @@ public class Seat{
 		this.passenger = null;
 	}
 	
+	
 	public Seat(String seatNumber){
 		this.seatNumber = seatNumber;
 		convertSeatNumToCoords();
 		this.seatStatus = SeatStatus.FREE;
 		this.passenger = null;
 	}
+	
 	
 	public Seat(int seatX, int seatY){
 		this.seatX = seatX;
@@ -30,37 +45,46 @@ public class Seat{
 		this.passenger = null;
 	}
 	
+	
 	public int getSeatX(){
 		return this.seatX;
 	}
+	
 	
 	public void setSeatX(int seatX){
 		this.seatX = seatX;
 	}
 	
+	
 	public int getSeatY(){
 		return this.seatY;
 	}
 
+	
 	public void setSeatY(int seatY){
 		this.seatY = seatY;
 	}
+	
 	
 	public String getSeatNumber(){
 		return this.seatNumber;
 	}
 	
+	
 	public void setSeatNumber(String seatNumber){
 		this.seatNumber = seatNumber;
 	}
+	
 	
 	public float getSeatPrice(){
 		return this.seatPrice;
 	}
 	
+	
 	public void setSeatPrice(float seatPrice){
 		this.seatPrice = seatPrice;
 	}
+	
 	
 	public void convertSeatNumToCoords(){
 		setSeatX(Character.getNumericValue(this.seatNumber.charAt(0))-1);
@@ -75,6 +99,7 @@ public class Seat{
 			setSeatY(3);
 	}
  
+	
 	private void convertCoordsToSeatNum() {
 		String yCoord = "";
 		
