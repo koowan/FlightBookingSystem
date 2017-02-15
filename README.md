@@ -29,6 +29,6 @@ Staff can view seating plan and details of seats.
 
 No refund policy but seats can be resold.
 
-Passenger discount: 10% local
-                    25% business
+Passenger discount: 10% local,
+                    25% business,
                     5% economy (only in promotion)
