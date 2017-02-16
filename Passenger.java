@@ -1,22 +1,22 @@
 public class Passenger{
 	private String name;
-	private PassengerType type;
 	private String address;
 	private String passportNum;
 	private String businessName;
+	private boolean resident;
 	    
 	public Passenger() throws InputValidationException{
 		setName(null);
-		setType(PassengerType.STANDARD);
 		setAddress(null);
 		setPassportNum(null);
 		setBusinessName(null);
+		setResident(false);
 	}
 
 
-	public Passenger(String name, PassengerType type, String address, String passportNum, String businessName) throws InputValidationException{
+	public Passenger(String name, boolean resident, String address, String passportNum, String businessName) throws InputValidationException{
 		setName(name);
-		setType(type);
+		setResident(resident);
 		setAddress(address);
 		setPassportNum(passportNum);
 		setBusinessName(businessName);
@@ -28,19 +28,19 @@ public class Passenger{
 	}
 
 	public void setName(String name) throws InputValidationException {
-		if (name.matches("\\p{Alpha}){1,15}")){
+		if (name.matches("\\p{Alpha}{1,15}")){
 			this.name = name;
 		} else {
 			throw new InputValidationException();
 		}
 	}
 
-	public PassengerType getType(){
-		return this.type;
+	public boolean getResident(){
+		return this.resident;
 	}
 
-	public void setType(PassengerType type){
-		this.type = type;
+	public void setResident(boolean resident){
+		this.resident = resident;
 	}
 
 	public String getAddress(){
@@ -48,11 +48,11 @@ public class Passenger{
 	}
 
 	public void setAddress(String address) throws InputValidationException {
-		if (address.matches("\\p{Digit}(\\p{Space}(\\p{Alpha}(\\p{Space}(\\p{Alpha}){3, 30}")){
+		//if (address.matches("\\p{Digit}\\p{Space}\\p{Alpha}\\p{Space}\\p{Alpha}{3,30}")){
 			this.address = address;
-		} else {
-			throw new InputValidationException();
-		}
+		//} else {
+		//	throw new InputValidationException();
+		//}
 	}
 
 	public String getPassportNum(){
@@ -60,7 +60,7 @@ public class Passenger{
 	}
 
 	public void setPassportNum(String passportNum) throws InputValidationException {
-		if (passportNum.matches("\\p{Digit}){8}")){
+		if (passportNum.matches("\\p{Digit}{8}")){
 			this.passportNum = passportNum;
 		} else {
 			throw new InputValidationException();
@@ -78,10 +78,10 @@ public class Passenger{
 
 	
 	public void viewPassenger(){
-		if (this.type == PassengerType.BUSINESS)
-			System.out.println("\nName: " + this.name + "\nType: " + this.type + "\nBusiness: " + this.businessName + "\nAddress: " + this.address + "\nPassport #: " + this.passportNum);
+		if (this.businessName != null)
+			System.out.println("\nName: " + this.name + "\nPassport #: " + this.passportNum + "\nAddress: " + this.address + "\nBusiness: " + this.businessName + "\nResident?: " + this.resident);
 		else
-			System.out.println("\nName: " + this.name + "\nType: " + this.type + "\nAddress: " + this.address + "\nPassport #: " + this.passportNum);
+			System.out.println("\nName: " + this.name + "\nPassport #: " + this.passportNum + "\nAddress: " + this.address + "\nResident?: " + this.resident);
 		
 	}
 
