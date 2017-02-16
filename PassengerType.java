@@ -1,4 +1,4 @@
 
 public enum PassengerType {
-	LOCAL, BUSINESS, ECONOMY
+	STANDARD, LOCAL, BUSINESS, ECONOMY
 }
