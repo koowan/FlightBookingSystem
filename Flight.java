@@ -185,6 +185,23 @@ public class Flight{
 		return true;
 	}
 	
+	public void viewAvailability(){
+		for (int i = 0; i < 4; i++){
+			for (int j = 0; j < 8; j++){
+				if (this.seating[i][j].getSeatStatus() == SeatStatus.FREE){
+				  System.out.print(this.seating[i][j].getSeatNumber() + "[A]\t");
+				}
+				else if (this.seating[i][j].getSeatStatus() == SeatStatus.RESERVED){
+					System.out.print(this.seating[i][j].getSeatNumber() + "[R]\t");
+				}
+				else if (this.seating[i][j].getSeatStatus() == SeatStatus.BOOKED){
+					System.out.print(this.seating[i][j].getSeatNumber() + "[B]\t");
+				}
+			}
+			System.out.println("\n");
+		}
+	}
+	
 	
 	public static int convertSeatNumToXCoord(String seatNum){
 		int x = -1;
