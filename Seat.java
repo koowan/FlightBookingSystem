@@ -2,11 +2,11 @@ import java.util.*;
 
 public class Seat{
 	private String seatNumber;
-	private float seatPrice;
 	int seatX; //row
 	int seatY; //column
 	SeatStatus seatStatus;
 	Passenger passenger;
+	
 	
 	public Seat(){
 		this.seatNumber = "1A";
@@ -15,15 +15,13 @@ public class Seat{
 		this.passenger = null;
 	}
 	
-	
 	public Seat(String seatNumber){
 		this.seatNumber = seatNumber;
 		convertSeatNumToCoords();
 		this.seatStatus = SeatStatus.FREE;
 		this.passenger = null;
 	}
-	
-	
+
 	public Seat(int seatX, int seatY){
 		this.seatX = seatX;
 		this.seatY = seatY;
@@ -32,44 +30,44 @@ public class Seat{
 		this.passenger = null;
 	}
 	
+	public Passenger getPassenger(){
+		return this.passenger;
+	}
+	
+	public void setPassenger(Passenger passenger){
+		this.passenger = passenger;
+	}
+	
+	public SeatStatus getSeatStatus(){
+		return this.seatStatus;
+	}
+	
+	public void setSeatStatus(SeatStatus status){
+		this.seatStatus = status;
+	}
 	
 	public int getSeatX(){
 		return this.seatX;
 	}
 	
-	
 	public void setSeatX(int seatX){
 		this.seatX = seatX;
 	}
 	
-	
 	public int getSeatY(){
 		return this.seatY;
 	}
-
 	
 	public void setSeatY(int seatY){
 		this.seatY = seatY;
 	}
 	
-	
 	public String getSeatNumber(){
 		return this.seatNumber;
 	}
 	
-	
 	public void setSeatNumber(String seatNumber){
 		this.seatNumber = seatNumber;
-	}
-	
-	
-	public float getSeatPrice(){
-		return this.seatPrice;
-	}
-	
-	
-	public void setSeatPrice(float seatPrice){
-		this.seatPrice = seatPrice;
 	}
 	
 	
