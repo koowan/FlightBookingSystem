@@ -1,7 +1,6 @@
 import java.util.*;
 public class MainMenu{
   public static void main(String[] args) throws InputValidationException {
-    //set "PATH=%PATH%;C:\Program Files\Java\jdk1.8.0_60\bin"
     Scanner input = new Scanner(System.in);
     UserInterface userInterface = new UserInterface();
     FlightStatus flightStatus;
@@ -56,11 +55,11 @@ public class MainMenu{
               String passengerName = input.nextLine();
               System.out.println("Are you a resident of the Western Isles? Y/N");
               String isResident = input.next();
-              if(!isResident.equals("N") || isResident.equals("n")){
-                resident = true;
-              }
-              else {
+              if (isResident.equals("N") || isResident.equals("n")){
                 resident = false;
+              }
+              else if(isResident.equals("Y") || isResident.equals("y")){
+                resident = true;
               }
               System.out.println("Enter your address:");
               String address = input.nextLine();
@@ -96,11 +95,11 @@ public class MainMenu{
               String passengerName = input.nextLine();
               System.out.println("Are you a resident of the Western Isles? Y/N");
               String isResident = input.next();
-              if (!isResident.equals("N") || !isResident.equals("n")){
-                resident = true;
-              }
-              else {
+              if (isResident.equals("N") || isResident.equals("n")){
                 resident = false;
+              }
+              else if (isResident.equals("Y") || isResident.equals("y")){
+                resident = true;
               }
               System.out.println("Enter your address:");
               String address = input.nextLine();
@@ -153,7 +152,7 @@ public class MainMenu{
               userInterface.displayFlightTwoDetails();
               break;
             }//end switch 1
-      } while (choice!='Q');
+      } while (choice!=5);
     }
     catch (InputValidationException e) {
       e.printStackTrace();
