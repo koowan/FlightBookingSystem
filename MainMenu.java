@@ -15,7 +15,6 @@ public class MainMenu{
     Flight two = new Flight("4321", "Western Isle", "Glasgow", FlightStatus.CLOSED);
 
     try{
-      do {
         userInterface.displayMainMenu();
         userChoice = input.next();
         switch(switch1){
@@ -152,7 +151,6 @@ public class MainMenu{
               userInterface.displayFlightTwoDetails();
               break;
             }//end switch 1
-      } while (choice!=5);
     }
     catch (InputValidationException e) {
       e.printStackTrace();
