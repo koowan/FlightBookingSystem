@@ -153,7 +153,7 @@ public class MainMenu{
               userInterface.displayFlightTwoDetails();
               break;
             }//end switch 1
-      } while (choice!=5);
+      } while (choice!='Q')
     }
     catch (InputValidationException e) {
       e.printStackTrace();
