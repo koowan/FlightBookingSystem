@@ -9,13 +9,6 @@ public class Flight{
 	private double profit;
 	boolean promotion;
 
-	/*public static void main(String[] args) throws InputValidationException {
-		Flight test = new Flight("123","idk","idc",FlightStatus.OPEN);
-		
-		test.makeReservation("3C","willy",false,"challenger","12345678","twitch.tv/notrealwillywin");
-		
-	}*/
-
 	public Flight(){
 		setFlightNumber(null);
 		setDepartName(null);
@@ -25,8 +18,7 @@ public class Flight{
 		setProfit(0);
 		setPromotion(false);
 	}
-	
-	
+
 	public Flight(String flightNumber, String departName, String arrivalName, FlightStatus flightStatus){
 		setFlightNumber(flightNumber);
 		setDepartName(departName);
@@ -34,7 +26,6 @@ public class Flight{
 		setFlightStatus(flightStatus);
 		generateSeats();
 	}
-
 
 	public String getFlightNumber(){
 		return this.flightNumber;
@@ -59,7 +50,7 @@ public class Flight{
 	public void setArrivalName(String arrivalName){
 		this.arrivalName = arrivalName;
 	}
-	
+
 	public FlightStatus getFlightStatus(){
 		return this.flightStatus;
 	}
@@ -67,32 +58,32 @@ public class Flight{
 	public void setFlightStatus(FlightStatus flightStatus) {
 		this.flightStatus = flightStatus;
 	}
-	
+
 	public Seat getSeat(String seatNum){
 		int x = convertSeatNumToXCoord(seatNum);
 		int y = convertSeatNumToYCoord(seatNum);
-		
+
 		return this.seating[x][y];
 	}
-	
+
 	public double getProfit(){
 		return this.profit;
 	}
-	
+
 	public void setProfit(double profit){
 		this.profit = profit;
 	}
-	
+
 	public boolean getPromotion(){
 		return this.promotion;
 	}
-	
+
 	public void setPromotion(boolean promotion){
 		this.promotion = promotion;
 	}
 
-	
 	public void flightStatusDisplay(){
+		//prints flight status
 		if (getFlightStatus() == FlightStatus.OPEN){
 			System.out.println("Available for booking");
 		} else if (getFlightStatus() == FlightStatus.CHECKING_IN){
@@ -100,11 +91,10 @@ public class Flight{
 		} else if (getFlightStatus() == FlightStatus.BOARDING){
 			System.out.println("Boarding");
 		} else if (getFlightStatus() == FlightStatus.CLOSED){
-			System.out.println("Closed");
-		}
+			System.out.println("Closed | No bookings or reservations can be made.");
+		}return;
 	}
 
-	
 	public void generateSeats(){
 		// generates 4 row, 8 column grid of seats
 		for (int i = 0; i < 4; i ++) {
@@ -114,11 +104,10 @@ public class Flight{
 		}
 	}
 
-	
 	public void makeReservation(String seatNum, String passengerName, boolean resident, String address, String passportNum, String businessName) throws InputValidationException{
 		int x = convertSeatNumToXCoord(seatNum);
 		int y = convertSeatNumToYCoord(seatNum);
-		
+
 		// checks if flight details have been finalized
 		if (this.flightNumber == null || this.departName == null || this.arrivalName == null){
 			System.out.println("Flight details not finalized; reservation cannot be made.");
@@ -132,46 +121,76 @@ public class Flight{
 		// checks if seat is reserved or booked already
 		if (!(seating[x][y].getSeatStatus() == SeatStatus.FREE))
 			System.out.println("Seat is not open; reservation cannot be made");
-		
+
 		Passenger passenger = new Passenger(passengerName, resident, address, passportNum, businessName);
 		seating[x][y].setPassenger(passenger);
 		seating[x][y].setSeatStatus(SeatStatus.RESERVED);
 		this.profit += calcPrice(seating[x][y].getPassenger());
-		
+
 		// check if flight is full
 		if (checkFlightFull())
 			closeFlight();
 	}
-	
-	
-	
-	/* confirm reservation
-	 * 
-	 */
-	
-	/* cancel reservation
-	 * 
-	 */
-	
+
+	public void confirmReservation(String seatNum, String passengerName)throws InputValidationException{
+		int x = convertSeatNumToXCoord(seatNum);
+		int y = convertSeatNumToYCoord(seatNum);
+
+		if(passengerName == seating[x][y].getPassenger().getName()){
+			System.out.println("Booking confirmed! :)");
+			seating[x][y].setSeatStatus(SeatStatus.BOOKED);
+		}
+		else {
+			System.out.println("Reservation could not be found.");
+		}
+		return;
+	}
+
+	public void cancelReservation(String seatNum, String passengerName) throws InputValidationException {
+		int x = convertSeatNumToXCoord(seatNum);
+		int y = convertSeatNumToYCoord(seatNum);
+
+		if (passengerName == seating[x][y].getPassenger().getName()){
+		seating[x][y].setSeatStatus(SeatStatus.FREE);
+		seating[x][y].setPassenger(null);
+		System.out.println("Reservation/Booking has been cancelled.");
+		}
+		else {
+			System.out.println("Reservation/Booking could not be found.");
+		}
+		return;
+	}
+
+	public void openFlight(){
+		setFlightStatus(FlightStatus.OPEN);
+	}
+
+	public void checkinFlight(){
+		setFlightStatus(FlightStatus.CHECKING_IN);
+	}
+
+	public void boardingFlight(){
+		setFlightStatus(FlightStatus.BOARDING);
+	}
+
 	public void closeFlight(){
 		setFlightStatus(FlightStatus.CLOSED);
 	}
-	
+
 	private double calcPrice(Passenger passenger){
 		// base ticket = 500.00
 		double price = 500;
-		
+
 		if (!passenger.getBusinessName().equals(null)) // if business name provided, 25% off
 			return price *= .75;
 		else if (passenger.getResident()) // if passenger is resident, 10% off
 			return price *= .90;
 		else if (this.promotion) // if promotion is ongoing, 5% off
 			return price *= .95;
-		
+
 		return price;
 	}
-	
-	
+
 	public boolean checkFlightFull(){
 		// if any seat is free, return false
 		for (int i = 0; i < 4; i ++) {
@@ -184,8 +203,12 @@ public class Flight{
 		// otherwise, flight is full, return true
 		return true;
 	}
-	
+
 	public void viewAvailability(){
+		//prints out a seating plan that shows which seats are available or not
+		System.out.println("[A] = Available | [R] = Reserved | [B] = Booked\n");
+		System.out.println("Seating plan: ");
+		System.out.println("");
 		for (int i = 0; i < 4; i++){
 			for (int j = 0; j < 8; j++){
 				if (this.seating[i][j].getSeatStatus() == SeatStatus.FREE){
@@ -201,14 +224,21 @@ public class Flight{
 			System.out.println("\n");
 		}
 	}
-	
-	
+
+	public void viewPassenger(String seatNum){
+		//view a passenger in a specific seat
+		int x = convertSeatNumToXCoord(seatNum);
+		int y = convertSeatNumToYCoord(seatNum);
+
+		System.out.println(seating[x][y].getPassenger());
+	}
+
 	public static int convertSeatNumToXCoord(String seatNum){
 		int x = -1;
 		x = Character.getNumericValue(seatNum.charAt(0))-1;
 		return x;
 	}
-	
+
 	public static int convertSeatNumToYCoord(String seatNum){
 		int y = -1;
 
@@ -220,7 +250,7 @@ public class Flight{
 			y = 3;
 		else if(seatNum.charAt(1) == 'A')
 			y = 4;
-		
+
 		return y;
 	}
 }
